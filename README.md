@@ -28,19 +28,16 @@ For the impatient users, the following text shows what "./LE_1dim_reflect -h" gi
 
 USAGE: ./LE_1dim_reflect [OPTIONS]
 
-INPUT: files containing negative logarithm of the histogram representing the free energy (in kJ/mol), friction constant (in kJ ps /(mol ns**2 nm**2)),
-start point (in nm), mass (in kg/mol), temperature (in K). Free energy and friction units are compatible with input from dcTMD correction scripts 
-available at www.moldyn.uni-freiburg.de/software/software.html. 
-OUTPUT: trajectory generated according to the Markovian Langevin equation (in ns, nm)
+INPUT: files containing negative logarithm of the histogram representing the free energy (in kJ/mol), friction constant (in kJ ps /(mol ns$^2$ nm$^2$)), start point (in nm), mass (in kg/mol), temperature (in K). Free energy and friction units are compatible with input from dcTMD correction scripts available at www.moldyn.uni-freiburg.de/software/software.html.
+OUTPUT: trajectory generated according to the Markovian Langevin equation (in ns, nm).
 RESOLUTION: integration timestep (option -t) times output frequency (option -s) is the time difference between the points.
 
 The program propagates the Markovian Langevin equation in one dimension based on given fields starting at a certain point (file at option -start).
      
-The Markovian Langevin equation is based on the free energy (drift), Stokes friction and white noise. Based on F(x)=-kT*ln(P(x)), the file given to the program
-(option -free) needs to be (x,kJ/mol). The program needs in addition the number of free energy and friction points in the respective files
+The Markovian Langevin equation is based on the free energy (drift), Stokes friction and white noise. Based on F(x)=-kT$\cdot$ ln(P(x)), the file given to the program (option -free) needs to be (x,kJ/mol). The program needs in addition the number of free energy and friction points in the respective files
 (specified by options -n and -ngamma). x needs to be given in nm.
 The derivative of the free energy is approximated by the difference between the local free energy and the free energy at the neighbouring grid points.
-The differences in both directions (x_i > x_{i,actual} and x_i < x_{i,actual}) are averaged. The friction gamma (units of kJ ps /(mol ns**2 nm**2))
+The differences in both directions (x_i > x_{i,actual} and x_i < x_{i,actual}) are averaged. The friction gamma (units of kJ ps /(mol ns$^2$ nm$^2$))
 is given by the file at option -gamma similar to the free energy, the noise is scaled according to the Fluctuation-Dissipation theorem.
 Together with the temperature (option -T given in K), the mass (option -mass given in kg/mol) and the integration timestep (option -t given in ns)
 this is everything which we need. Based on normal distributed white noise (seed given by option -I), the velocity is propagated by according to the integration
