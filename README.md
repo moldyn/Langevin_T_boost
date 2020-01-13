@@ -13,7 +13,7 @@ The jupyter notebook can be used out of the box.
 
 To compile the C++ code, make sure that the Eigen-C++-library is installed on your system!
 
-Then, perform the following steps:
+Then, perform the following steps:\
 0) Download the C++ file together with CMakeLists.txt to some folder Langevin
 1) Run "cmake -H. -Bbuild" in the shell
 2) Run "cmake --build build -- -j3" in the shell
