@@ -28,8 +28,10 @@ For the impatient users, the following text shows what "./LE_1dim_reflect -h" gi
 
 USAGE: ./LE_1dim_reflect [OPTIONS]
 
-INPUT: files containing negative logarithm of the histogram representing the free energy (in kJ/mol), friction constant (in kJ ps /(mol ns$^2$ nm$^2$)), start point (in nm), mass (in kg/mol), temperature (in K). Free energy and friction units are compatible with input from dcTMD correction scripts available at www.moldyn.uni-freiburg.de/software/software.html.
+INPUT: files containing negative logarithm of the histogram representing the free energy (in kJ/mol), friction constant (in kJ ps /(mol ns^2 nm^2)), start point (in nm), mass (in kg/mol), temperature (in K). Free energy and friction units are compatible with input from dcTMD correction scripts available at www.moldyn.uni-freiburg.de/software/software.html.
+
 OUTPUT: trajectory generated according to the Markovian Langevin equation (in ns, nm).
+
 RESOLUTION: integration timestep (option -t) times output frequency (option -s) is the time difference between the points.
 
 The program propagates the Markovian Langevin equation in one dimension based on given fields starting at a certain point (file at option -start).
