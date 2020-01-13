@@ -38,7 +38,7 @@ The program propagates the Markovian Langevin equation in one dimension based on
      
 The Markovian Langevin equation is based on the free energy (drift), Stokes friction and white noise. Based on F(x)=-kT*ln(P(x)), the file given to the program (option -free) needs to be (x,kJ/mol). The program needs in addition the number of free energy and friction points in the respective files (specified by options -n and -ngamma). x needs to be given in nm.
 The derivative of the free energy is approximated by the difference between the local free energy and the free energy at the neighbouring grid points.
-The differences in both directions (x_i > x_{i,actual} and x_i < x_{i,actual}) are averaged. The friction gamma (units of kJ ps /(mol ns$^2$ nm$^2$)) is given by the file at option -gamma similar to the free energy, the noise is scaled according to the Fluctuation-Dissipation theorem.
+The differences in both directions (x_i > x_{i,actual} and x_i < x_{i,actual}) are averaged. The friction gamma (units of kJ ps /(mol ns^2 nm^2)) is given by the file at option -gamma similar to the free energy, the noise is scaled according to the Fluctuation-Dissipation theorem.
 Together with the temperature (option -T given in K), the mass (option -mass given in kg/mol) and the integration timestep (option -t given in ns) this is everything which we need. Based on normal distributed white noise (seed given by option -I), the velocity is propagated by according to the integration scheme presented by Bussi and Parrinello in Bussi G. and Parrinello M., 'Accurate sampling using Langevin dynamics', Phys. Rev. E, 75(5), 056707, (2007).
      
 The constructed trajectory is reflected at the borders of the free energy file. If the trajectory jumps over one of these borders by the
@@ -53,15 +53,15 @@ ATTENTION: If the numbers given with -n and -ngamma do not fit to the files, the
 OPTIONS: after each option there needs to be a whitespace, e.g., '-T 320', to not disturb the program
 
 -h show these lines\
--start name file with starting point [default startpoint in nm]
--free name file with free energy (x,G(x)) [default free_energy, kJ/mol]
--gamma name file with friction (x,Gamma(x)) [default gamma, units kg/(mol*ns), equals the kJ ps /(mol nm^2) from Gromacs]
--mass name file with mass [default mass, units kg/mol]
--o name output trajectory [default lang, units ns,nm]
--t integration timestep in ns [default 1 fs, i.e., 0.000001]
--T temperature [default 300 K]
--I seed random number generator [default: 0]
--L length of output trajectory [default: 100000 points]
--s write out every sth point [default: 1, i.e., every timestep]
--n number of 'grid' points of the free energy [default: 200]
+-start name file with starting point [default startpoint in nm]\
+-free name file with free energy (x,G(x)) [default free_energy, kJ/mol]\
+-gamma name file with friction (x,Gamma(x)) [default gamma, units kg/(mol*ns), equals the kJ ps /(mol nm^2) from Gromacs]\
+-mass name file with mass [default mass, units kg/mol]\
+-o name output trajectory [default lang, units ns,nm]\
+-t integration timestep in ns [default 1 fs, i.e., 0.000001]\
+-T temperature [default 300 K]\
+-I seed random number generator [default: 0]\
+-L length of output trajectory [default: 100000 points]\
+-s write out every sth point [default: 1, i.e., every timestep]\
+-n number of 'grid' points of the free energy [default: 200]\
 -ngamma number of 'grid' points of gamma [default: 200]
